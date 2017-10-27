@@ -1,0 +1,156 @@
+html{
+	margin:0;
+	padding: 0; 
+}
+body{
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	background-color: #386960;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+}
+#menu{
+	width: 100vw;
+	height: 24vh;
+	background-color: #D27D13;
+}
+#head{
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+}
+#nam{
+	color: #F7941E;
+}
+#name{
+	font-family: "OpenSansCondensedBold";
+	font-size: 31px;
+}
+#name span {
+  display: inline-block;
+  position: relative;  
+}
+#name span:after {
+  content: "";
+  position: absolute;
+  height: 22px;
+  border-bottom: 1px solid #D27D13;
+  top: 0;
+  width: 980px;
+  left: 100%;
+  margin-left: 15px;
+}
+#logo{
+	display: flex;
+	align-items: center;
+}
+#logo p{
+	margin-left: 150px;
+	display: flex;
+}
+#logo p input{
+	width: 350px;
+	height: 32px;
+	border:0px;
+	outline: none;
+	padding-left: 10px;
+	font-size: 20px;
+	border-radius: 20px;
+}
+#logo #add{
+	size: 55px;
+	margin-left: 100px;
+}
+#logo p img{
+	width:32px;
+	height:32px;
+}
+#sign{
+	margin-left: 10px;
+}
+a{
+	text-decoration: none;
+	margin-left: 10px;
+	color: black;
+	size: 15px;
+	font-family: "OpenSansCondensedBold";
+}
+a:hover{
+	color: white; 
+}
+#cards{
+	display: flex;
+}
+#main{
+	width: 100vw;
+	height: 70%;
+	margin-bottom: 20px;
+}
+#main #card{
+	margin-left: 50px;
+}
+#main img{
+	width: 500px;
+	height: 500px;
+	margin-bottom: 50px;
+}
+#main #card p{
+	font-family: "OpenSansCondensedBold";
+	font-size: 20px;
+	line-height: 1.15;
+} 
+#main #card span{
+	color:#D27D13;
+}
+#main #card button{
+	width: 180px;
+	height: 50px;
+	border-radius: 20px;
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	font-family: "OpenSansCondensedBold";
+	border:0px;
+}
+#main #card #price{
+	font-size: 40px;
+}
+#footer{
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 4vh;
+	background-color: #E1D19D; 
+	text-align: center;
+	font-family: "OpenSansCondensedBold";
+	font-size: 21px;
+}
+@font-face {
+	font-family: "OpenSansCondensedBold";  
+	src: url("fonts/OpenSans-CondBold.ttf") format("truetype"); 
+	font-style: normal; 
+	font-weight: normal; 
+} 
+@media screen and (max-width: 600px){
+	#main img{
+		display: none;
+	}
+	#main #name{
+		font-size: 20px;
+		padding-left: 50px;
+	}
+	#logo p{
+		display: none;
+	}
+	#logo #add{
+		display: none;
+	}
+	#logo{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
