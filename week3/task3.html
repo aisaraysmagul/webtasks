@@ -1,0 +1,174 @@
+<html>
+<head>
+<style>
+body{
+  display: flex;
+  justify-content: center;
+  background-image: url("fon.png");
+  margin: 0;
+}
+.container{
+  width: 40vw;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+header nav{
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  background-color: #D3D3D3;
+}
+header nav a{
+  margin:0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  width: 25vw;
+  text-align: center;
+  background-color: #D3D3D3;
+  text-decoration: none;
+  color: black;
+  height: 20px;
+}
+nav a:hover{
+  background-color: red;
+  color: white;
+}
+
+.logo_part{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.logo_part .search{
+  padding-left: 70px;
+}
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-top: 10px;
+  height: 20vh;
+  flex: 1;
+}
+.card{
+  border:1px solid red;
+  border-radius: 10px;
+  display: flex;
+  margin: 5 1 2 7;
+  flex-direction: column;
+  width: 10vw;
+  text-align: center;
+}
+.card .title{
+  text-decoration: none;
+  color: white;
+  background-color: #5599FF;
+  border-top-right-radius:  10px;
+  border-top-left-radius: 10px;
+}
+.card .price{
+  font-weight: bold;
+}
+
+footer{
+  background-color: black;
+  color: white;
+  width: 40vw;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  align-self: flex-end;
+  bottom: 0;
+  position: absolute;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <nav>
+    <a href="#" class='active'>Home</a><a href="#">Contacts</a><a href="#">About us</a><a href="#">Comitee</a>
+  </nav>
+  <div class="logo_part">
+     <img src="http://via.placeholder.com/200x100"/>
+     <div class="search">
+       <input type="text"/>
+       <button>Search</button>
+     </div>
+  </div>
+</header>
+
+<section class="main_section">
+  <div class="cards">
+    <div class="card">
+      <a href="#" class="title">Toyota Avensis</a>
+        <img src="http://via.placeholder.com/150x150"/>
+      <div class="description">
+      
+      </div>
+      <div class="price">
+        50.000$
+      </div>
+    </div>
+        <div class="card">
+       <a href="#" class="title">Toyota Avensis</a>
+        <img src="http://via.placeholder.com/150x150"/>
+      <div class="description">
+      
+      </div>
+      <div class="price">
+        50.000$
+      </div>
+    </div>
+        <div class="card">
+      <a href="#" class="title">Toyota Avensis</a>
+        <img src="http://via.placeholder.com/150x150"/>
+      <div class="description">
+      
+      </div>
+      <div class="price">
+        50.000$
+      </div>
+    </div>
+    <div class="card">
+      <a href="#" class="title">Toyota Avensis</a>
+        <img src="http://via.placeholder.com/150x150"/>
+      <div class="description">
+      
+      </div>
+      <div class="price">
+        50.000$
+      </div>
+    </div>
+        <div class="card">
+      <a href="#" class="title">Toyota Avensis</a>
+        <img src="http://via.placeholder.com/150x150"/>
+      <div class="description">
+      
+      </div>
+      <div class="price">
+        50.000$
+      </div>
+    </div>
+     <div class="card">
+      <a href="#" class="title">Toyota Avensis</a>
+        <img src="http://via.placeholder.com/150x150"/>
+      <div class="description">
+      
+      </div>
+      <div class="price">
+        50.000$
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  @copy; 2017 Wheels.kz. All cars
+</footer>
+</div>
+</html>

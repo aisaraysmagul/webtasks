@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <style>
+      #cards .card{
+        border:1px solid red;
+        display:flex;
+        width:300px;
+      }
+      #cards .card .title{
+        flex-grow: 1;
+      }
+      #cards .card .price{
+        font-weight: bold;
+        padding-right: 20px;
+      }
+      #loading{
+        display: none;
+      }
+      #cards{
+        width:300px;
+        height:200px;
+        border: 1px solid blue;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <button>Load</button>
+    <div>
+      <button id="sortByMaker">Sort by maker</button>
+      <button id="sortByPrice">Sort by price</button>
+    </div>
+    <div id="cards">
+      <img width="300px" height="200px" id="loading" src="https://upload.wikimedia.org/wikipedia/commons/b/b1/Loading_icon.gif"/>
+    </div>
+
+
+    <script defer>
+       var cards = document.querySelector('#cards');
+      var button = document.querySelector("button");
+      var sm = document.querySelector("#sortByMaker");
+      var sp = document.querySelector("#sortByPrice");
+      var arrmarker = [];
+      function click(){
+        var image = document.querySelector("#loading");
+        image.style.display = "block";
+        button.textContent = "Loading...";
+        fetch('http://demo4296963.mockable.io/listCars').then(function(response) {
+          return response.text();
+        }).then(function(newz) {
+          const auto = JSON.parse(newz);
+          for (let items of auto){
+            var card = document.createElement('div');
+            var title = document.createElement('div'); 
+            var price = document.createElement('div');
+            card.className="card";
+            title.className = "title";
+            price.className = "price";
+            title.textContent = items.maker+" "+items.model;
+            price.textContent = items.price;
+            card.append(title);
+            card.append(price);
+            cards.append(card);
+            image.style.display = "none";
+            button.textContent = "Items are loaded";
+            arrmarker.push(card);
+          }
+        });
+    }
+    function sortByMaker(){
+      arrmarker.sort(function(a,b){
+        titleA = a.childNodes[0].innerHTML.toUpperCase();
+        titleB = b.childNodes[0].innerHTML.toUpperCase();
+        if (titleA<titleB){return -1;}
+        else {return 1;}
+        return 0;
+      });
+      for(var item of arrmarker){
+        cards.removeChild(item);
+      }
+      arrmarker.forEach(function(item,i,arrmarker){
+        cards.append(item);
+      });
+    }
+    function sortByPrice(){
+      arrmarker.sort(function(a,b){
+        return  a.childNodes[1].innerHTML -  b.childNodes[1].innerHTML;
+      });
+      for(var item of arrmarker){
+        cards.removeChild(item);
+      }
+      arrmarker.forEach(function(item,i,arrmarker){
+        cards.append(item);
+      });
+    }
+    sp.addEventListener('click', sortByPrice);
+    sm.addEventListener('click', sortByMaker);
+    button.addEventListener("click", click);
+    </script>
+  </body>
+
+</html>
